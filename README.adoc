@@ -1,0 +1,4 @@
+### Data-prep script for XUI performance testing
+
+To run locally:
+- Performance test against the perftest environment: `./gradlew gatlingRun`
