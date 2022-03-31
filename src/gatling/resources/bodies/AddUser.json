@@ -1,0 +1,63 @@
+{
+  "firstName": "Perftest",
+  "lastName": "Solicitor",
+  "email": "${orgName}-user${count}@mailinator.com",
+  "roles": [
+    "caseworker",
+    "caseworker-adoption",
+    "caseworker-adoption-solicitor",
+    "caseworker-civil",
+    "caseworker-civil-solicitor",
+    "caseworker-cmc",
+    "caseworker-cmc-solicitor",
+    "caseworker-divorce",
+    "caseworker-divorce-solicitor",
+    "caseworker-divorce-financialremedy",
+    "caseworker-divorce-financialremedy-solicitor",
+    "caseworker-employment",
+    "caseworker-employment-solicitor",
+    "caseworker-ia",
+    "caseworker-ia-solicitor",
+    "caseworker-privatelaw",
+    "caseworker-privatelaw-solicitor",
+    "caseworker-probate",
+    "caseworker-probate-solicitor",
+    "caseworker-publiclaw",
+    "caseworker-publiclaw-solicitor",
+    "caseworker-sscs",
+    "caseworker-sscs-solicitor"
+  ],
+  "jurisdictions": [
+    {
+      "id": "Family public law and adoption"
+    },
+    {
+      "id": "Civil enforcement and possession"
+    },
+    {
+      "id": "CMC"
+    },
+    {
+      "id": "DIVORCE"
+    },
+    {
+      "id": "EMPLOYMENT"
+    },
+    {
+      "id": "IA"
+    },
+    {
+      "id": "PRIVATELAW"
+    },
+    {
+      "id": "PROBATE"
+    },
+    {
+      "id": "PUBLICLAW"
+    },
+    {
+      "id": "SSCS"
+    }
+  ],
+  "resendInvite": false
+}

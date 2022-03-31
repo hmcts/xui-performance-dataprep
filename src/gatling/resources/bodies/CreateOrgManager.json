@@ -1,0 +1,6 @@
+{
+  "email": "${orgManagerEmail}",
+  "forename": "Perftest",
+  "password": "Pass19word",
+  "surname": "OrgManager"
+}

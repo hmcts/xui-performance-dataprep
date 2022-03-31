@@ -1,0 +1,65 @@
+{
+  "name": "${orgName}",
+  "sraId": "${SRAId}",
+  "sraRegulated": true,
+  "companyNumber": "${CompanyNumber}",
+  "companyUrl": "${CompanyURL}",
+  "superUser": {
+    "firstName": "Perftest",
+    "lastName": "OrgManager",
+    "email": "${orgManagerEmail}",
+    "jurisdictions": [
+      {
+        "id": "DIVORCE"
+      },
+      {
+        "id": "SSCS"
+      },
+      {
+        "id": "PROBATE"
+      },
+      {
+        "id": "PUBLICLAW"
+      },
+      {
+        "id": "BULK SCANNING"
+      },
+      {
+        "id": "IA"
+      },
+      {
+        "id": "CMC"
+      },
+      {
+        "id": "PRIVATELAW"
+      },
+      {
+        "id": "EMPLOYMENT"
+      },
+      {
+        "id": "CIVIL"
+      }
+    ]
+  },
+  "paymentAccount": [
+    "${PaymentAccount1}",
+    "${PaymentAccount2}"
+  ],
+  "contactInformation": [
+    {
+      "addressLine1": "1 Perf Test Road",
+      "addressLine2": "",
+      "addressLine3": "",
+      "townCity": "Perf Test Town",
+      "county": "",
+      "country": "UK",
+      "postCode": "PR1 1RF",
+      "dxAddress": [
+        {
+          "dxNumber": "DX 1121111990",
+          "dxExchange": "112111192099908492"
+        }
+      ]
+    }
+  ]
+}

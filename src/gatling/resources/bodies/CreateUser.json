@@ -1,0 +1,6 @@
+{
+  "email": "${orgName}-user${count}@mailinator.com",
+  "forename": "Perftest",
+  "password": "Pass19word",
+  "surname": "Solicitor"
+}
