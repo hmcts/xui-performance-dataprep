@@ -4,14 +4,12 @@ import io.gatling.core.Predef._
 import io.gatling.http.Predef.http
 import io.gatling.core.scenario.Simulation
 import scenarios._
-
-
 import scala.concurrent.duration._
 
 class XUI_DataPrep extends Simulation {
 
-	val rampUpDurationMins = 5
-	val numberOfOrgsToCreate = 1
+	val rampUpDurationMins = 3
+	val numberOfOrgsToCreate = 10
 	val numberOfSolicitorsPerOrg = 4
 
 	/*======================================================================================
@@ -22,9 +20,9 @@ class XUI_DataPrep extends Simulation {
 	 {
 		 exitBlockOnFail {
 			 exec(
-				 XUI_DataPrep.createOrgManager,
-				 XUI_DataPrep.createOrg,
-				 XUI_DataPrep.approveOrg
+				 XUI_DataPrep.CreateOrgManager,
+				 XUI_DataPrep.CreateOrg,
+				 XUI_DataPrep.ApproveOrg
 			 )
 			 .repeat(numberOfSolicitorsPerOrg, "count") {
 				 exec(XUI_DataPrep.AddUser)
@@ -34,12 +32,8 @@ class XUI_DataPrep extends Simulation {
 
 
 	setUp(
-		XUIDataPrepScenario.inject(rampUsers(numberOfOrgsToCreate) during (rampUpDurationMins minutes)).pauses(pauseOption)
+		XUIDataPrepScenario.inject(rampUsers(numberOfOrgsToCreate) during (rampUpDurationMins minutes))
 	).protocols(http)
-		.assertions(forAll.successfulRequests.percent.gte(80))
-
- 
-
-
+		.assertions(global.successfulRequests.percent.is(100))
 
 }
