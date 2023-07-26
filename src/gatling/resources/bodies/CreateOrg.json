@@ -1,18 +1,18 @@
 {
-  "name": "${orgName}",
+  "name": "#{orgName}",
   "status": "ACTIVE",
-  "sraId": "${SRAId}",
+  "sraId": "#{SRAId}",
   "sraRegulated": true,
-  "companyNumber": "${CompanyNumber}",
-  "companyUrl": "${CompanyURL}",
+  "companyNumber": "#{CompanyNumber}",
+  "companyUrl": "#{CompanyURL}",
   "superUser": {
     "firstName": "Perftest",
     "lastName": "OrgManager",
-    "email": "${orgManagerEmail}"
+    "email": "#{orgManagerEmail}"
   },
   "paymentAccount": [
-    "${PaymentAccount1}",
-    "${PaymentAccount2}"
+    "#{PaymentAccount1}",
+    "#{PaymentAccount2}"
   ],
   "contactInformation": [
     {

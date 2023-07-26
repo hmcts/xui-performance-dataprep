@@ -1,7 +1,7 @@
 {
   "firstName": "Perftest",
   "lastName": "Solicitor",
-  "email": "${orgName}-user${count}@mailinator.com",
+  "email": "#{orgName}-user#{count}@mailinator.com",
   "roles": [
     "pui-caa",
     "caseworker",
