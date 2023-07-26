@@ -60,7 +60,7 @@ object XUI_DataPrep {
     .exec(http("XUIDataPrep_020_CreateOrg")
       .post(PrdAPIUrl + "/refdata/external/v1/organisations")
       .header("Content-Type", "application/json")
-      .header("ServiceAuthorization", "${serviceToken}")
+      .header("ServiceAuthorization", "#{serviceToken}")
       .body(ElFileBody("bodies/CreateOrg.json"))
       .check(jsonPath("$.organisationIdentifier").saveAs("orgId"))
       .check(status is 201))
@@ -76,10 +76,10 @@ object XUI_DataPrep {
     exec(S2S_Token.GetBearerToken)
 
     .exec(http("XUIDataPrep_030_ApproveOrg")
-      .put(PrdAPIUrl + "/refdata/internal/v1/organisations/${orgId}")
+      .put(PrdAPIUrl + "/refdata/internal/v1/organisations/#{orgId}")
       .header("Content-Type", "application/json")
-      .header("ServiceAuthorization", "${serviceToken}")
-      .header("Authorization", "Bearer ${bearerToken}")
+      .header("ServiceAuthorization", "#{serviceToken}")
+      .header("Authorization", "Bearer #{bearerToken}")
       .body(ElFileBody("bodies/ApproveOrg.json")))
 
     .pause(3)
@@ -98,11 +98,11 @@ object XUI_DataPrep {
 
     .pause(3)
 
-    .exec(http("XUIDataPrep_050_AddUser${count}")
-      .post(PrdAPIUrl + "/refdata/internal/v1/organisations/${orgId}/users/")
+    .exec(http("XUIDataPrep_050_AddUser#{count}")
+      .post(PrdAPIUrl + "/refdata/internal/v1/organisations/#{orgId}/users/")
       .header("Content-Type", "application/json")
-      .header("ServiceAuthorization", "${serviceToken}")
-      .header("Authorization", "Bearer ${bearerToken}")
+      .header("ServiceAuthorization", "#{serviceToken}")
+      .header("Authorization", "Bearer #{bearerToken}")
       .body(ElFileBody("bodies/AddUser.json"))
       .check(jsonPath("$.userIdentifier"))
       .check(status in (200,201)))
