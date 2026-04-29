@@ -1,18 +1,18 @@
 package scenarios
 
-import com.typesafe.config.ConfigFactory
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
 import utils.Environment
+import utilities.AzureKeyVault
 
-object S2S_Token {
+object Auth {
 
   val RpeAPIURL = Environment.rpeAPIURL
   val IdamAPIUrl = Environment.idamAPIURL
 
   val adminUserFeeder = csv("AdminUsers.csv").circular
 
-  val clientSecret = ConfigFactory.load.getString("auth.clientSecret")
+  val clientSecret = AzureKeyVault.loadClientSecret("rd-perftest", "OAUTH2-CLIENT-SECRET")
 
   val GetServiceToken =
 

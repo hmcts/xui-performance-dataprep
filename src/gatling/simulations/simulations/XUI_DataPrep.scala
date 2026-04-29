@@ -8,8 +8,8 @@ import scala.concurrent.duration._
 
 class XUI_DataPrep extends Simulation {
 
-	val rampUpDurationMins = 3
-	val numberOfOrgsToCreate = 10
+	val rampUpDurationMins = 1
+	val numberOfOrgsToCreate = 1
 	val numberOfSolicitorsPerOrg = 4
 
 	/*======================================================================================
