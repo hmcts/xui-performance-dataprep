@@ -11,6 +11,10 @@ java {
   }
 }
 
+dependencies {
+  gatlingImplementation project(":common-performance")
+}
+
 tasks.withType(Copy).all{
   duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }

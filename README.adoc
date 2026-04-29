@@ -1,9 +1,20 @@
 ### Data-prep script for XUI performance testing
 
 To run locally:
-- Performance test against the perftest environment: `./gradlew gatlingRun`
+- Run against the perftest environment: `./gradlew gatlingRun`
 
+##Inputs
 
-Before running locally, update the client secret in src/gatling/resources/application.conf then run `git update-index --assume-unchanged src/gatling/resources/application.conf` to ensure the changes aren't pushed to github.
+1. In the simulation file, amend the following accordingly:
 
-To make other configuration changes to the file, first run `git update-index --no-assume-unchanged src/gatling/resources/application.conf`, ensuring to remove the client secret before pushing to origin
+- rampUpDurationMins: the time to ramp up users (one user is run per org created)
+- numberOfOrgsToCreate: number of organisations to create
+- numberOfSolicitorsPerOrg = number of solicitors (users) to add per organisation (excluding the org admin user)
+
+2. In the scenario file, amend the following:
+
+- line 25: set the string prefix used to name the org and users based on the service e.g. "perf-prl-"
+
+##Outputs:
+
+1. The generated data (orgs/users/passwords) are output to src/gatling/output/UserDetails.csv

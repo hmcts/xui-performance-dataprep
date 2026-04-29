@@ -55,7 +55,7 @@ object XUI_DataPrep {
       "PaymentAccount1" -> ("PBA" + randomNumber(7)),
       "PaymentAccount2" -> ("PBA" + randomNumber(7))))
 
-    .exec(S2S_Token.GetServiceToken)
+    .exec(Auth.GetServiceToken)
 
     .exec(http("XUIDataPrep_020_CreateOrg")
       .post(PrdAPIUrl + "/refdata/external/v1/organisations")
@@ -73,7 +73,7 @@ object XUI_DataPrep {
 
   val ApproveOrg =
 
-    exec(S2S_Token.GetBearerToken)
+    exec(Auth.GetBearerToken)
 
     .exec(http("XUIDataPrep_030_ApproveOrg")
       .put(PrdAPIUrl + "/refdata/internal/v1/organisations/#{orgId}")
