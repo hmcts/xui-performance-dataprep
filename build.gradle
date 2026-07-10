@@ -23,11 +23,6 @@ repositories {
   mavenCentral()
 }
 
-gatling {
-  gatlingVersion '3.15.0'
-  scalaVersion '2.13.11'
-}
-
 sourceSets {
   gatling {
     scala {
