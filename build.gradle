@@ -1,35 +1,13 @@
 plugins {
-  id 'org.owasp.dependencycheck' version '12.2.2'
-  id 'scala'
-  id 'java-library'
-  id 'io.gatling.gradle' version '3.15.1.1'
+    id 'performance'
 }
 
 java {
-  toolchain {
-    languageVersion = JavaLanguageVersion.of(21)
-  }
-}
-
-dependencies {
-  gatlingImplementation project(":common-performance")
-}
-
-tasks.withType(Copy).all{
-  duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-}
-
-repositories {
-  mavenCentral()
-}
-
-sourceSets {
-  gatling {
-    scala {
-      srcDir 'src/gatling/simulations'
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
     }
-    resources {
-      srcDir 'src/gatling/resources'
-    }
-  }
+}
+
+performance {
+    simulationClass = 'simulations.XUI_DataPrep'
 }
